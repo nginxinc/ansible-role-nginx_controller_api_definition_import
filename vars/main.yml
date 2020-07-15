@@ -4,7 +4,7 @@
 # nginx_controller_fqdn:  # FQDN of the NGINX Controller instance
 # nginx_controller_auth_token:  Authentication token for NGINX Controller
 
-# nginx_controller_api_specification_version:
-# nginx_controller_api_specification_body_format:
-# nginx_controller_api_specification_name:
-# nginx_controller_api_specification:
+# nginx_controller_api_definition_version:  # the version string: v1, v2.5.6, george
+# nginx_controller_api_definition_body_format:  # yaml or json
+# nginx_controller_api_definition_name:  # the name given to the definition in Controller
+# nginx_controller_api_definition:  # the body of the Open API definition

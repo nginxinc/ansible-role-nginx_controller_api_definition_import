@@ -5,31 +5,31 @@
   loop:
     - nginx_controller_fqdn
     - nginx_controller_auth_token
-    - nginx_controller_api_specification_name
-    - nginx_controller_api_specification
+    - nginx_controller_api_definition_name
+    - nginx_controller_api_definition
 
-- name: Fail if body_format not yaml or json
+- name: Fail if body_format not 'yaml' or 'json'
   assert:
     that: ("{{ item }} == 'yaml'") or ("{{ item }} == 'json'")
   loop:
-    - nginx_controller_api_specification_body_format
+    - nginx_controller_api_definition_body_format
 
 - name: set version to unspecified if not present 
   set_fact:
-    nginx_controller_api_specification_version: "unspecified"
-  when: (nginx_controller_api_specification_version is not defined)
+    nginx_controller_api_definition_version: "unspecified"
+  when: (nginx_controller_api_definition_version is not defined)
 
 - name: Form the api_import url
   set_fact:
     api_import_url: |-
-      "https://{{ nginx_controller_fqdn }}/{{ nginx_controller_api_version }}/services/api-specifications/{{ nginx_controller_api_specification_name }}/versions/{{ nginx_controller_api_specification_version }}"
+      "https://{{ nginx_controller_fqdn }}/{{ nginx_controller_api_version }}/services/api-definitions/{{ nginx_controller_api_definition_name }}/versions/{{ nginx_controller_api_definition_version }}"
 
-- name: Upsert api_specification (create if absent, change if present)
+- name: Upsert api_definition (create if absent, change if present)
   uri:
-    url: "{{ nginx_controller_api_specification_url }}"
+    url: "{{ nginx_controller_api_definition_url }}"
     method: "PUT"
-    body: "{{ nginx_controller_api_specification }}"
-    body_format: "{{ nginx_controller_api_specification_body_format }}"
+    body: "{{ nginx_controller_api_definition }}"
+    body_format: "{{ nginx_controller_api_definition_body_format }}"
     status_code:
       - 200
       - 201
@@ -38,8 +38,8 @@
     validate_certs: "{{ nginx_controller_validate_certs | default(false) }}"
     headers:
       Cookie: "{{ nginx_controller_auth_token }}"
-  register: nginx_controller_api_specification_status
+  register: nginx_controller_api_definition_status
 
-- name: Show api_specification status
+- name: Show api_definition status
   debug:
-    msg: "{{ nginx_controller_api_specification_status }}"
+    msg: "{{ nginx_controller_api_definition_status }}"
