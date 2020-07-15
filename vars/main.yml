@@ -1,0 +1,10 @@
+---
+## All the below variables are REQUIRED
+
+# nginx_controller_fqdn:  # FQDN of the NGINX Controller instance
+# nginx_controller_auth_token:  Authentication token for NGINX Controller
+
+# nginx_controller_api_specification_version:
+# nginx_controller_api_specification_body_format:
+# nginx_controller_api_specification_name:
+# nginx_controller_api_specification:
