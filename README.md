@@ -1,7 +1,7 @@
-NGINX Controller Certificate
+NGINX Controller API Definition Import
 ============================
 
-Upsert (create and update) certificates to NGINX Controller for use with Gateways and Components.
+Upsert (create and update) Open API 3 definitions to NGINX Controller for use as Published APIs.
 
 Requirements
 ------------
