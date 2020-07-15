@@ -26,7 +26,7 @@
 
 - name: Upsert api_definition (create if absent, change if present)
   uri:
-    url: "{{ nginx_controller_api_definition_url }}"
+    url: "{{ api_import_url }}"
     method: "PUT"
     body: "{{ nginx_controller_api_definition }}"
     body_format: "{{ nginx_controller_api_definition_body_format }}"
