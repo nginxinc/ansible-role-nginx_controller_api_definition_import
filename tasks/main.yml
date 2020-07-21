@@ -21,8 +21,7 @@
 
 - name: Form the api_import url
   set_fact:
-    api_import_url: >-
-      "https://{{ nginx_controller_fqdn }}/{{ nginx_controller_api_version }}/services/api-definitions/{{ nginx_controller_api_definition_name }}/versions/{{ nginx_controller_api_definition_version }}"
+    api_import_url: "https://{{ nginx_controller_fqdn }}/{{ nginx_controller_api_version }}/services/api-definitions/{{ nginx_controller_api_definition_name }}/versions/{{ nginx_controller_api_definition_version }}"
 
 - name: Upsert api_definition (create if absent, change if present)
   uri:
