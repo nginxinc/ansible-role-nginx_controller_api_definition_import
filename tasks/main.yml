@@ -8,9 +8,9 @@
     - nginx_controller_api_definition_name
     - nginx_controller_api_definition
 
-- name: Fail if body_format not 'yaml' or 'json'
+- name: Fail if body_format not 'raw' or 'json'
   assert:
-    that: ("{{ item }} == 'yaml'") or ("{{ item }} == 'json'")
+    that: ("{{ item }} == 'raw'") or ("{{ item }} == 'json'")
   loop:
     - nginx_controller_api_definition_body_format
 
