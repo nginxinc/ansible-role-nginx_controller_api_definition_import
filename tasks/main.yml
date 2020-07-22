@@ -8,11 +8,11 @@
     - nginx_controller_api_definition_name
     - nginx_controller_api_definition
 
-- name: Fail if body_format not 'raw' or 'json'
-  assert:
-    that: ("{{ item }} == 'raw'") or ("{{ item }} == 'json'")
-  loop:
-    - nginx_controller_api_definition_body_format
+# - name: Fail if body_format not 'yaml' or 'json' - only json allowed
+#   assert:
+#     that: ("{{ item }} == 'yaml'") or ("{{ item }} == 'json'")
+#   loop:
+#     - nginx_controller_api_definition_body_format
 
 - name: set version to unspecified if not present 
   set_fact:
@@ -28,7 +28,7 @@
     url: "{{ api_import_url }}"
     method: "PUT"
     body: "{{ nginx_controller_api_definition }}"
-    body_format: "{{ nginx_controller_api_definition_body_format }}"
+    body_format: json
     status_code:
       - 200
       - 201

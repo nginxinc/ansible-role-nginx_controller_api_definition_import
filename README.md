@@ -21,8 +21,6 @@ Role Variables
 
 `nginx_controller_api_definition_version` - the version string: "v1", "v2.5.6", "george"
 
-`nginx_controller_api_definition_body_format` - yaml or json, describing the Open API specification file body itself
-
 `nginx_controller_api_definition` - the body of the Open API definition
 
 ### Template Variables
@@ -56,7 +54,6 @@ To use this role you can create a playbook such as the following (let's name it 
         name: nginxinc.nginx_controller_api_import
       vars:
         nginx_controller_api_definition_version: "v1"
-        nginx_controller_api_definition_body_format: "yaml"
         nginx_controller_api_definition_name: "f1-api"
         nginx_controller_api_definition: <yaml body>
 ```
