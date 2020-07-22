@@ -8,12 +8,6 @@
     - nginx_controller_api_definition_name
     - nginx_controller_api_definition
 
-# - name: Fail if body_format not 'yaml' or 'json' - only json allowed
-#   assert:
-#     that: ("{{ item }} == 'yaml'") or ("{{ item }} == 'json'")
-#   loop:
-#     - nginx_controller_api_definition_body_format
-
 - name: set version to unspecified if not present 
   set_fact:
     nginx_controller_api_definition_version: "unspecified"
@@ -21,7 +15,7 @@
 
 - name: Form the api_import url
   set_fact:
-    api_import_url: "https://{{ nginx_controller_fqdn }}/{{ nginx_controller_api_version }}/services/api-definitions/{{ nginx_controller_api_definition_name }}/versions/{{ nginx_controller_api_definition_version }}"
+    api_import_url: "https://{{ nginx_controller_fqdn }}/{{ nginx_controller_api_version }}/services/api-definitions/{{ nginx_controller_api_definition_name }}/versions/{{ nginx_controller_api_definition_version }}/import"
 
 - name: Upsert api_definition (create if absent, change if present)
   uri:
