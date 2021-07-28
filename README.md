@@ -51,7 +51,7 @@ To use this role you can create a playbook such as the following (let's name it 
 
     - name: Import the API definition
       include_role:
-        name: nginxinc.nginx_controller_api_import
+        name: nginxinc.nginx_controller_api_definition_import
       vars:
         nginx_controller_api_definition_version: "v1"
         nginx_controller_api_definition_name: "f1-api"
