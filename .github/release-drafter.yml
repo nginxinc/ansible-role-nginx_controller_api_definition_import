@@ -95,5 +95,5 @@ template: |
   ## Resources
 
   *   Functional configuration examples (check `converge.yml` under each `molecule` scenario) -- [github.com/nginxinc/ansible-role-nginx_controller_api_definition_import/tree/$RESOLVED_VERSION/molecule](https://github.com/nginxinc/ansible-role-nginx_controller_api_definition_import/tree/$RESOLVED_VERSION/molecule).
-  *   Ansible Galaxy repository -- [galaxy.ansible.com/nginxinc/nginx_controller_api_definition_import](https://galaxy.ansible.com/nginxinc/ansible_role_nginx_controller_api_definition_import).
+  *   Ansible Galaxy repository -- [galaxy.ansible.com/nginxinc/ansible_role_nginx_controller_api_definition_import](https://galaxy.ansible.com/nginxinc/ansible_role_nginx_controller_api_definition_import).
   *   NGINX: Better with Ansible demo -- [github.com/alessfg/nginx-ansible-demo](https://github.com/alessfg/nginx-ansible-demo).
