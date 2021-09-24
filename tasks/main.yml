@@ -8,7 +8,7 @@
     - nginx_controller_api_definition_name
     - nginx_controller_api_definition
 
-- name: set version to unspecified if not present 
+- name: Set version to unspecified if not present
   set_fact:
     nginx_controller_api_definition_version: "unspecified"
   when: (nginx_controller_api_definition_version is not defined)
@@ -27,7 +27,7 @@
       - 200
       - 201
       - 202
-    return_content: yes
+    return_content: true
     validate_certs: "{{ nginx_controller_validate_certs | default(false) }}"
     headers:
       Cookie: "{{ nginx_controller_auth_token }}"

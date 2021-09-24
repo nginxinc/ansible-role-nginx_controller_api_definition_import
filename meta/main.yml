@@ -3,8 +3,9 @@ galaxy_info:
   author: Brian Ehlert
   description: A role to import Open API definitions to NGINX Controller
   company: F5 Networks, Inc.
-  name: nginx_controller_api_definition_import
-  
+  role_name: nginx_controller_api_definition_import
+  namespace: nginxinc
+
   license: Apache License, Version 2.0
 
   min_ansible_version: 2.7

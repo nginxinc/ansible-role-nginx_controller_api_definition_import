@@ -1,0 +1,16 @@
+---
+- name: Converge
+  hosts: controllers
+
+  vars:
+    nginx_controller_validate_certs: false
+    nginx_controller_fqdn: mock-server.molecule-test:1080
+    nginx_controller_auth_token: "ABC123"
+    nginx_controller_api_definition_version: "v1"
+    nginx_controller_api_definition_name: "f1-api"
+    nginx_controller_api_definition: "<yaml body>"
+
+  tasks:
+    - name: Call API Definition Import Role
+      include_role:
+        name: ansible-role-nginx_controller_api_definition_import
