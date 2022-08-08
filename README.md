@@ -1,6 +1,8 @@
 NGINX Controller API Definition Import
 ============================
 
+# This repository has been archived. There will likely be no further development on the project and security vulnerabilities may be unaddressed.
+
 Upsert (create and update) Open API 3 definitions to NGINX Controller for use as Published APIs.
 
 Requirements
